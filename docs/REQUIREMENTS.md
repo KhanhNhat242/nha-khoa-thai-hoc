@@ -90,7 +90,10 @@ Ghi chú:
 | 4 | **Tiểu phẫu nhổ răng khôn, kể cả răng mọc ngầm trong xương** | C — 18–30 tuổi |
 
 - Không thêm dịch vụ khác (tẩy trắng, trám răng, nha khoa trẻ em tổng quát…) thành mục riêng.
-- Ưu tiên nổi bật [SUY LUẬN]: **Implant** và **Niềng răng** — vì khách tự giới thiệu là *"Trung tâm trồng răng Implant & niềng răng"* (mục 7).
+- Ưu tiên nổi bật [cập nhật 04/11/2026 theo yêu cầu người dùng]:
+  - Trong section Dịch vụ, chỉ làm nổi **Tiểu phẫu nhổ răng khôn, kể cả răng mọc ngầm trong xương**, vì đây là chuyên môn khó (USP 2). Mục này hiển thị thành khối riêng, giữ nguyên vị trí thứ 4.
+  - Implant & Niềng răng đã được nhấn ở tiêu đề Hero (mục 7), nên không gắn thêm nhãn "trọng tâm" ở section Dịch vụ.
+  - Không viết câu so sánh kiểu "ít phòng khám làm được" (R2: không so sánh với phòng khám khác).
 
 ---
 
@@ -225,7 +228,7 @@ Quy ước [SUY LUẬN]:
 
 - Link trong PDF bị xuống dòng; nếu link không mở được thì copy lại từ phiếu gốc (chú ý ký tự `l`/`I` trong `1CEJhVlK`).
 - Tải về thủ công, lưu vào `public/images/`:
-  - Logo: `public/images/logo.*`.
+  - Logo: `public/images/logo-nha-khoa-thai-hoc.png` (nền ngoài huy hiệu trong suốt). Khi thay logo thì đổi sang tên file mới để trình duyệt/cache ảnh không giữ bản cũ.
   - Tên file không dấu, kebab-case.
 - Ưu tiên ảnh thật của khách. Ảnh stock chỉ dùng cho hình minh hoạ chung (không dùng cho bác sĩ hay ca thực tế), phải hợp chủ đề nha khoa và có quyền sử dụng.
 
@@ -248,9 +251,15 @@ Trang duy nhất `/` (landing page), các section theo thứ tự Trust & Author
 1. **Header** — logo, menu neo (Dịch vụ · Bác sĩ · Ca thực tế · Liên hệ), hotline, nút "Đặt lịch tư vấn".
 2. **Hero** (Hero-Centric) — ảnh bác sĩ làm trung tâm, tiêu đề theo mục 7, huy hiệu giấy phép, CTA "Đặt lịch tư vấn" + "Gọi ngay".
 3. **Dải chỉ số tin cậy** (Flat) — BS.CK1 · 12+ năm · Sở Y tế cấp phép · Làm cả ngày lễ (USP 1, 3, 4).
-4. **Dịch vụ** — 4 dịch vụ (mục 4) với icon flat, mỗi dịch vụ nói tới nhóm khách tương ứng (mục 5).
-5. **Bác sĩ** — BS.CK1 Vũ Thái Học, hơn 12 năm, trực tiếp điều trị, chuyên sâu Implant / răng sứ / răng khôn mọc ngầm (USP 2), giấy phép, tiêu chí.
-6. **Ca điều trị thực tế** (Social Proof) — ảnh trước/sau từ Drive, chia tab Implant · Răng sứ · Răng khôn · Niềng răng (USP 5).
+4. **Dịch vụ** [cập nhật 04/11/2026 theo ảnh mẫu của người dùng]:
+   - Bố cục: tiêu đề căn giữa → hàng 4 ô ảnh kiểu accordion ngang → nút "Đặt lịch tư vấn" căn giữa.
+   - Mặc định mỗi ô chỉ hiện tiêu đề đè lên ảnh.
+   - Hover (hoặc focus bàn phím) → ô giãn ngang và hiện nhóm khách hàng, mô tả, nút tư vấn.
+   - Điện thoại / máy tính bảng không hover được → chi tiết luôn hiển thị, để không giấu thông tin.
+   - Mục răng khôn mọc ngầm có nhãn "Thế mạnh của bác sĩ" (xem mục 4).
+   - Ảnh từ Drive của khách: hộp trụ Implant, khách cầm hộp khí cụ chỉnh nha, tư vấn thiết kế nụ cười, tiểu phẫu dưới đèn mổ. [CẦN HỎI] ảnh niềng răng có khuôn mặt khách — cần xác nhận khách đồng ý (giống mục 12.7).
+5. **Ca điều trị thực tế** (Social Proof) — ảnh trước/sau từ Drive, chia tab Implant · Răng sứ · Răng khôn · Niềng răng (USP 5).
+6. **Bác sĩ** — BS.CK1 Vũ Thái Học, hơn 12 năm, trực tiếp điều trị, chuyên sâu Implant / răng sứ / răng khôn mọc ngầm (USP 2), giấy phép. Tiêu chí **"Chuyên môn – Đạo đức – Trách nhiệm"** hiển thị nổi bật.
 7. **Đặt lịch** (Conversion-Optimized) — form 3 trường, kèm nút gọi 2 hotline và Zalo, địa chỉ và bản đồ.
 8. **Footer** — tên đầy đủ, giấy phép, địa chỉ, hotline, Facebook.
 9. **Nút nổi** — Gọi / Zalo.
@@ -314,8 +323,25 @@ Nguồn: yêu cầu của người dùng ngày 03/11/2026. Bản này thay thế
   - Có skip link, HTML ngữ nghĩa, tôn trọng reduced-motion.
 
 **Style bổ trợ theo phần**
-- **Hero-Centric** (#20) — Hero dùng ảnh bác sĩ thay vì ảnh phòng khám.
+- **Hero** [cập nhật 04/11/2026 theo ảnh mẫu của người dùng]:
+  - Banner [cập nhật 04/11/2026]: dùng `public/images/hero-banner2.png` (ảnh phòng tiểu phẫu do người dùng cung cấp). Trên desktop, Hero cao đúng 1 màn hình (100svh), chạy lên dưới header.
+  - Chữ "Thái Học" cỡ lớn nằm **sau** lớp người.
+    - Lớp người được tách bằng `node scripts/tach-nen-hero.mjs`, lưu ở `public/images/site/hero-banner-2-nguoi.webp`. Ảnh nền đã tối ưu: `public/images/site/hero-banner-2.jpg`.
+    - Cách tách: giữ các vùng nối liền với màu áo mổ/mũ xanh. Khẩu trang trắng của bác sĩ nữ và mũ sáng màu của 2 bác sĩ trùng màu tường nên dùng **đa giác vẽ tay** — đổi ảnh thì phải đo và vẽ lại.
+  - Tiêu đề ở góc dưới trái, tên bác sĩ + nút ở góc dưới phải.
+  - Có lớp tối mờ phía dưới để chữ trắng đạt tương phản; đây là ngoại lệ có chủ đích với quy tắc "không gradient" của Flat, vì lý do Accessible & Ethical.
+  - Mobile: ảnh ở trên, nội dung bên dưới trên nền trắng.
+  - Nét viền chữ [04/11/2026]: phần chữ "Thái Học" bị người che được vẽ lại bằng nét viền xanh đè lên người. Lớp viền dùng mặt nạ hình người `public/images/site/hero-banner-2-mat-na.png`, do cùng script tạo ra.
+  - Header [cập nhật 04/11/2026]: khi khối ảnh Hero còn nằm ngay dưới header, header **trong suốt** và không có đường kẻ (ảnh Hero hiện xuyên qua). Cuộn qua hết ảnh thì chuyển về nền trắng + đường kẻ 1px (`components/sections/header-shell.tsx`).
+  - Tiêu đề Hero [người dùng yêu cầu 04/11/2026]: hiệu ứng **ShinyText** của React Bits (`components/ui/shiny-text.tsx`, chuyển sang TS). Chữ xám #b5b5b5 có vệt sáng trắng chạy ngang lặp lại (speed 2, shineWidth 40, softness 0.8). **Chỉ desktop**, nơi chữ nằm trên lớp ảnh tối. Mobile chữ nằm trên nền trắng nên tắt hiệu ứng, giữ màu ink/xanh để đủ tương phản. Màu khai báo ở `lib/theme.ts` (`shinyHero`).
+  - Chiều cao Hero desktop [cập nhật 04/11/2026, người dùng yêu cầu]: `min(100svh, 900px)` (tối thiểu 640px). Màn laptop cao đến 900px vẫn thấy Hero đầy màn hình; màn lớn hơn (1080p, 1440p…) Hero dừng ở 900px, không kéo dài theo màn hình.
+  - Nếu đổi ảnh banner thì phải tạo lại lớp người cho khớp, bằng lệnh `node scripts/tach-nen-hero.mjs`.
 - **Social Proof-Focused** (#24) — ca trước/sau chia theo 4 dịch vụ.
+  - Thẻ ca [người dùng yêu cầu 04/11/2026]: hiệu ứng **ReflectiveCard** của React Bits (`components/ui/reflective-card.tsx`, chuyển sang TS, WebGL2). Thẻ kim loại sáng màu bạc (theme light) cho hợp tông trắng của trang, các thẻ cùng hàng cao bằng nhau; nghiêng 3D và vệt sáng theo chuột; ảnh ca nằm trong khung trắng bên trong thẻ. Không dùng video phản chiếu, không webcam, không cài `@hugeicons`. Chỉ dựng thẻ của tab đang mở để giới hạn số ngữ cảnh WebGL. Ngoại lệ có chủ đích với quy tắc bóng đổ/bo 4px, chỉ áp dụng cho các thẻ này.
+- **Section Bác sĩ** [người dùng yêu cầu 04/11/2026]: bố cục giới thiệu bác sĩ theo ảnh mẫu.
+  - Trái [cập nhật 04/11/2026, người dùng yêu cầu]: thẻ hồ sơ **ProfileCard** của React Bits (`components/ui/profile-card.tsx`, chuyển sang TS, theme tối). Thẻ nghiêng 3D, có ánh holo + vệt loá theo chuột, ảnh trượt nhẹ. Trên ảnh: tên bác sĩ + "Bác sĩ chuyên khoa Răng Hàm Mặt". Chân thẻ: tên phòng khám, "Làm việc cả ngày lễ" (USP 4), nút "Đặt lịch" → form. Không dùng ảnh hoa văn holo (`iconUrl`), không nghiêng theo cảm biến điện thoại, không cài `@hugeicons`. Chữ và nút được nới to hơn bản gốc (chữ ≥ 14px, nút ≥ 44px).
+  - Phải: nhãn nhỏ, tiêu đề có tên bác sĩ tô xanh, đoạn giới thiệu, hàng 3 chỉ số (12+ năm · CK1 · giấy phép 135/NB), rồi nút đặt lịch + nút gọi.
+  - Mọi số liệu lấy từ phiếu.
 - **Conversion-Optimized** (#21) — form 3 trường + gọi 2 hotline + Zalo.
 - **Flat Design** (#12) — icon dịch vụ và dải chỉ số tin cậy: khối màu phẳng, không bóng, không gradient.
 
@@ -336,7 +362,7 @@ Nguồn: yêu cầu của người dùng ngày 03/11/2026. Bản này thay thế
 - Khi chỉnh một trong hai demo, không được làm chúng giống nhau.
 
 **Ảnh** (từ `public/images/library`, đã tối ưu vào `public/images/site/`):
-- **Hero:** ảnh bác sĩ trực tiếp chăm sóc khách. [CẦN HỎI] xác nhận người trong ảnh là BS.CK1 Vũ Thái Học; nên xin ảnh chân dung chính thức.
+- **Hero:** banner `hero-banner2.png` do người dùng cung cấp (ê-kíp bác sĩ trong phòng tiểu phẫu). Ảnh không gắn tên riêng cho từng người. Nếu muốn có ảnh chân dung BS.CK1 Vũ Thái Học thì vẫn cần xin ảnh chính thức.
 - **Ca trước/sau:** ảnh khách đã tự đăng. Chú thích chỉ mô tả ca điều trị, không ghi tên bệnh nhân. [CẦN HỎI] xác nhận bệnh nhân đồng ý đăng lên website (mục 12.7).
 
 **Chỉnh chữ để đúng R2 (quảng cáo y tế)**: không ghi tên thương hiệu trụ Implant thành chữ.

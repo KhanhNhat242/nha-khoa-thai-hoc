@@ -3,19 +3,17 @@ import { BOOKING_ANCHOR, navItems, siteConfig, telHref } from "@/lib/site-config
 import { ButtonLink } from "@/components/ui/button-link";
 import { PhoneIcon } from "@/components/ui/icons";
 import { MobileMenu } from "./mobile-menu";
+import { HeaderShell } from "./header-shell";
 
-/** Header Swiss: nền trắng đặc, đường kẻ 1px, không blur/bóng. */
+/** Header Swiss: nền đặc, không blur/bóng. Nền hoà vào Hero khi ở đầu trang, trắng + kẻ 1px khi cuộn qua (HeaderShell). */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 h-20 border-b border-line bg-white">
+    <HeaderShell>
       <div className="container-site flex h-full items-center justify-between gap-6">
         <a href="#" className="flex shrink-0 items-center gap-3" aria-label={`${siteConfig.shortName} – về đầu trang`}>
           {/* Logo giữ nguyên tỉ lệ, không cắt xén */}
           <Image src={siteConfig.logo} alt="" width={52} height={52} className="h-[52px] w-[52px] object-contain" />
-          <span className="leading-tight">
-            <span className="block text-[17px] font-bold tracking-[-0.01em] text-ink">{siteConfig.shortName}</span>
-            <span className="block text-[14px] text-ink-soft">{siteConfig.doctor.short}</span>
-          </span>
+          <span className="text-[17px] leading-tight font-bold tracking-[-0.01em] text-ink">{siteConfig.shortName}</span>
         </a>
 
         <nav aria-label="Điều hướng chính" className="hidden lg:block">
@@ -55,6 +53,6 @@ export function SiteHeader() {
           <MobileMenu />
         </div>
       </div>
-    </header>
+    </HeaderShell>
   );
 }

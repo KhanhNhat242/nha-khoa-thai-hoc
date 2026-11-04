@@ -75,7 +75,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
   - Hotline luôn dễ thấy và là link `tel:`.
 - Mobile-first, chạy tốt từ 360px, không tràn ngang.
 - Ảnh và logo:
-  - `public/images/temp-logo.png` chỉ là placeholder → thay bằng `public/images/logo.*`.
+  - Logo thật: `public/images/logo-nha-khoa-thai-hoc.png` (đường dẫn khai báo ở `lib/site-config.ts`). `public/images/temp-logo.png` chỉ là placeholder cũ, không dùng.
   - Tên file ảnh không dấu, kebab-case.
 - Khi làm UI dùng các skill đã cài: `ui-ux-pro-max`, `ui-taste`. Với code React/Next dùng `vercel-react-best-practices`.
 

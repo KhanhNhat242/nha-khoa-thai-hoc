@@ -12,7 +12,22 @@ export function MobileMenu() {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+
+    // Khoá cuộn trang khi menu mở (menu phủ kín màn hình bên dưới header)
+    const html = document.documentElement;
+    const prevOverflow = html.style.overflow;
+    html.style.overflow = "hidden";
+
+    // Xoay/phóng cửa sổ lên desktop (≥ lg, menu bị ẩn) → đóng menu để không kẹt khoá cuộn
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const onDesktop = (e: MediaQueryListEvent) => e.matches && setOpen(false);
+    desktop.addEventListener("change", onDesktop);
+
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", onDesktop);
+      html.style.overflow = prevOverflow;
+    };
   }, [open]);
 
   return (
@@ -36,7 +51,11 @@ export function MobileMenu() {
       </button>
 
       {open ? (
-        <div id="mobile-menu" className="absolute inset-x-0 top-20 border-b border-line bg-white">
+        <div
+          id="mobile-menu"
+          /* Phủ kín màn hình bên dưới header (cao 80px); nội dung dài thì cuộn bên trong menu */
+          className="fixed inset-x-0 top-20 bottom-0 overflow-y-auto overscroll-contain bg-white"
+        >
           <nav aria-label="Điều hướng di động" className="container-site py-2">
             <ul className="flex flex-col">
               {navItems.map((item) => (

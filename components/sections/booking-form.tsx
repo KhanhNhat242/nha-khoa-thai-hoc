@@ -72,7 +72,7 @@ export function BookingForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="border-l-4 border-brand-600 bg-surface p-6">
+      <div role="status" className="rounded-[4px] border border-line bg-surface p-6">
         <p className="flex items-center gap-3 text-[20px] font-bold text-ink">
           <span className="grid h-9 w-9 place-items-center rounded-[4px] bg-brand-700 text-white">
             <CheckIcon size={20} strokeWidth={2.2} />

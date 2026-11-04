@@ -22,7 +22,12 @@ export function SiteFooter() {
         <div className="md:col-span-4">
           <h2 className="text-[14px] font-semibold tracking-[0.06em] text-ink-soft uppercase">Liên hệ</h2>
           <ul className="mt-4 space-y-2 text-[16px] text-ink">
-            <li>{siteConfig.address}</li>
+            <li>
+              <a href={siteConfig.mapsUrl} target="_blank" className="hover:underline"
+              >
+                {siteConfig.address}
+              </a>
+            </li>
             {siteConfig.hotlines.map((h) => (
               <li key={h.raw}>
                 <a href={telHref(h)} className="font-semibold hover:text-brand-800 hover:underline">
@@ -61,7 +66,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-line">
-        <p className="container-site py-5 pb-24 text-[14px] text-ink-soft md:pb-5">© {siteConfig.fullName}.</p>
+        <p className="container-site py-5 pb-24 text-[14px] text-center text-ink-soft md:pb-5">© {siteConfig.fullName}.</p>
       </div>
     </footer>
   );

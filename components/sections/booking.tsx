@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { siteConfig, telHref } from "@/lib/site-config";
-import { ArrowRightIcon, ChatIcon, MapPinIcon, NavigationIcon, PhoneIcon } from "@/components/ui/icons";
+import { ChatIcon, MapPinIcon, NavigationIcon, PhoneIcon } from "@/components/ui/icons";
 import { BookingForm } from "./booking-form";
 
 /** Nút liên hệ trực tiếp — khối phẳng, cao 64px, nhãn rõ hành động. */
@@ -21,14 +21,13 @@ function ContactButton({
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className="group flex min-h-16 items-center gap-4 rounded-[4px] border border-line bg-white px-4 transition-colors duration-150 hover:border-brand-700"
+      className="flex min-h-16 items-center gap-4 rounded-[4px] border border-line bg-white px-4 transition-colors duration-150 hover:border-brand-700"
     >
       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[4px] bg-brand-700 text-white">{icon}</span>
       <span className="flex-1 leading-tight">
         <span className="block text-[14px] text-ink-soft">{label}</span>
         <span className="block text-[19px] font-bold text-ink">{value}</span>
       </span>
-      <ArrowRightIcon size={18} className="text-brand-800 transition-transform duration-150 group-hover:translate-x-1" />
     </a>
   );
 }
@@ -63,22 +62,6 @@ export function Booking() {
                 label="Chat Zalo"
                 value={siteConfig.zalo.display}
               />
-            </div>
-
-            <div className="mt-8 flex gap-3 border-t border-line pt-6">
-              <MapPinIcon size={21} className="mt-0.5 shrink-0 text-brand-700" />
-              <div>
-                <p className="text-[17px] font-semibold text-ink">{siteConfig.address}</p>
-                <a
-                  href={siteConfig.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-flex min-h-11 items-center gap-2 text-[16px] font-semibold text-brand-800 underline decoration-2 underline-offset-[6px]"
-                >
-                  <NavigationIcon size={17} />
-                  Chỉ đường trên Google Maps
-                </a>
-              </div>
             </div>
           </div>
 

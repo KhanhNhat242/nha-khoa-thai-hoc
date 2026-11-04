@@ -12,3 +12,14 @@ export const colors = {
   field: "#6B7280",
   error: "#B42318",
 } as const;
+
+/** Màu phản chiếu (tint) của thẻ ReflectiveCard ở section Ca thực tế — người dùng chỉ định, chỉ dùng trắng. */
+export const reflectiveCase = {
+  tint: "#ffffff",
+} as const;
+
+/** Màu chữ + vệt sáng ShinyText ở tiêu đề Hero (desktop, trên ảnh tối) — người dùng chỉ định, xám trung tính + trắng. */
+export const shinyHero = {
+  color: "#b5b5b5",
+  shineColor: "#ffffff",
+} as const;

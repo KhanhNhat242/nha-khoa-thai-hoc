@@ -4,7 +4,7 @@ import { AwardIcon, ClockIcon, DoctorIcon, ShieldCheckIcon } from "@/components/
 
 /** Dải chỉ số tin cậy — Flat Design (#12): khối xanh phẳng #047857, chữ trắng (5.48:1). USP 1, 3, 4. */
 const items: { icon: ComponentType<{ size?: number; className?: string }>; value: string; label: string }[] = [
-  { icon: DoctorIcon, value: "BS.CK1", label: "Bác sĩ chuyên khoa I trực tiếp điều trị" },
+  { icon: DoctorIcon, value: "BS.CK1", label: "Trực tiếp điều trị" },
   { icon: AwardIcon, value: "12+ năm", label: "Kinh nghiệm Răng Hàm Mặt" },
   { icon: ShieldCheckIcon, value: "Sở Y tế cấp phép", label: `Giấy phép ${siteConfig.license.numberCompact}` },
   { icon: ClockIcon, value: "Làm cả ngày lễ", label: "Thuận tiện sắp xếp lịch hẹn" },

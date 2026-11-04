@@ -46,7 +46,7 @@ export const siteConfig = {
     "https://www.google.com/maps?q=" +
     encodeURIComponent("Nha Khoa Thái Học, Phố Quang Thiện, Kim Sơn, Ninh Bình") +
     "&output=embed",
-  logo: "/images/logo.png",
+  logo: "/images/logo-nha-khoa-thai-hoc.png",
 } as const;
 
 export const hotlinesText = siteConfig.hotlines.map((h) => h.display).join(" - ");
@@ -54,8 +54,8 @@ export const telHref = (phone: Hotline | { raw: string }) => `tel:${phone.raw}`;
 
 export const navItems = [
   { href: "#dich-vu", label: "Dịch vụ" },
-  { href: "#bac-si", label: "Bác sĩ" },
   { href: "#ca-thuc-te", label: "Ca thực tế" },
+  { href: "#bac-si", label: "Bác sĩ" },
   { href: "#lien-he", label: "Liên hệ" },
 ] as const;
 

@@ -23,7 +23,7 @@ export function SectionHeading({ id, title, description }: Props) {
         {title}
       </h2>
       {description ? (
-        <p className="prose-body text-[17px] text-ink-soft lg:col-span-5 lg:col-start-8 lg:self-end">
+        <p className="prose-body text-balance! text-[17px] text-ink-soft lg:col-span-5 lg:col-start-8 lg:self-end">
           {description}
         </p>
       ) : null}

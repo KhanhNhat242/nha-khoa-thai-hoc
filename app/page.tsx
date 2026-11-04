@@ -23,10 +23,10 @@ export default function Home() {
       <SiteHeader />
       <main id="noi-dung" tabIndex={-1} className="flex-1 outline-none">
         <Hero />
-        <TrustStrip />
+        {/* <TrustStrip /> */}
         <Services />
-        <Doctor />
         <Cases />
+        <Doctor />
         <Booking />
       </main>
       <SiteFooter />

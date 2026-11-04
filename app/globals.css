@@ -43,6 +43,8 @@
 @utility prose-body {
   max-width: 64ch;
   line-height: 1.65;
+  /* Tránh 1 chữ rơi lẻ xuống dòng cuối (orphan) */
+  text-wrap: pretty;
 }
 
 @layer base {
@@ -74,6 +76,11 @@
 
   h1, h2, h3 {
     text-wrap: balance;
+  }
+
+  /* Không để 1 chữ (1 âm tiết) rơi lẻ xuống dòng cuối ở mọi đoạn văn/nhãn — áp dụng toàn trang */
+  p, li, dd, dt, figcaption, blockquote, label {
+    text-wrap: pretty;
   }
 }
 
@@ -121,6 +128,126 @@ body {
 .hero-rise {
   animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--rise-delay, 0ms);
+}
+
+/* ==========================================================================
+   Hero — nét viền chữ "Thái Học" đè lên phần người che chữ (components/sections/hero.tsx)
+   Mặt nạ = hình người đã tách nền; kích thước/vị trí phải khớp object-cover + object-[53%_50%] của ảnh.
+   ========================================================================== */
+.hero-outline {
+  -webkit-mask-image: url("/images/site/hero-banner-2-mat-na.png");
+  mask-image: url("/images/site/hero-banner-2-mat-na.png");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: 53% 50%;
+  mask-position: 53% 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.hero-outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-brand-700);
+}
+
+@media (width >= 64rem) {
+  .hero-outline-text {
+    -webkit-text-stroke-width: 2px;
+  }
+}
+
+/* ==========================================================================
+   Dịch vụ — accordion ngang (components/sections/services.tsx)
+   Mặc định (điện thoại / máy tính bảng / không hover): lưới, chi tiết luôn hiện.
+   Desktop có chuột: hàng ngang, hover hoặc focus bàn phím → ô giãn ngang + hiện chi tiết.
+   ========================================================================== */
+.svc-detail {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.svc-detail > div {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.svc-image {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Viền focus trắng trên nền ảnh tối (xanh đậm mặc định không đủ tương phản ở đây) */
+.svc-panel :focus-visible {
+  outline-color: #ffffff;
+}
+
+@media (width >= 64rem) and (hover: hover) {
+  .svc-row {
+    display: flex;
+    height: clamp(460px, 62vh, 560px);
+  }
+
+  .svc-panel {
+    flex: 1 1 0%;
+    min-width: 0;
+    min-height: 0;
+    transition: flex-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .svc-panel:hover,
+  .svc-panel:focus-within {
+    flex-grow: 2.6;
+  }
+
+  .svc-panel:hover .svc-image,
+  .svc-panel:focus-within .svc-image {
+    transform: scale(1.04);
+  }
+
+  /* Chi tiết thu gọn bằng grid-rows 0fr → 1fr để giãn chiều cao mượt */
+  .svc-detail {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.25s ease;
+  }
+
+  .svc-panel:hover .svc-detail,
+  .svc-panel:focus-within .svc-detail {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition-delay: 0.12s, 0.22s;
+  }
+
+  /* Cố định bề rộng nội dung chi tiết để chữ không bị dàn lại trong lúc ô đang giãn */
+  .svc-detail > div > div {
+    width: 440px;
+    max-width: calc(min(1440px, 100vw) * 0.42);
+  }
+
+  .svc-shade {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .svc-panel:hover .svc-shade,
+  .svc-panel:focus-within .svc-shade {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-panel,
+  .svc-detail,
+  .svc-shade,
+  .svc-image {
+    transition: none !important;
+  }
+
+  .svc-panel:hover .svc-image,
+  .svc-panel:focus-within .svc-image {
+    transform: none;
+  }
 }
 
 @media (scripting: none) {
